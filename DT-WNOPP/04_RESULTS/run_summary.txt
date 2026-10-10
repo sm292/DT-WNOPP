@@ -1,0 +1,10 @@
+DT-WNOPP prototype run summary
+Completed: 2026-10-10T16:50:25.810316
+Python: 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+Observations: 1000
+
+                MAE_ms  RMSE_ms      R2
+Persistence    10.0896  13.0238  0.5587
+Random Forest   8.5766  11.8344  0.6356
+
+Note: results use synthetic simulation data.
