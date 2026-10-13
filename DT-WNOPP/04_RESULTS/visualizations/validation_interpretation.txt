@@ -1,0 +1,7 @@
+Throughput: lowest average MAE is Random Forest at 14.39 source units; average R² is 0.626. It improves MAE over the training-mean baseline (29.2), but this alone does not make it reliable.
+
+Jitter: lowest average MAE is Random Forest at 0.1475 ms; average R² is -0.101. Negative average R² indicates weak generalisation on the held-out configurations. It improves MAE over the training-mean baseline (0.1696), but this alone does not make it reliable.
+
+Packet loss: lowest average MAE is Random Forest at 0.1147 source units; average R² is -0.723. Negative average R² indicates weak generalisation on the held-out configurations. It does not improve MAE over the training-mean baseline (0.1135).
+
+Error bars show split-to-split standard deviation across repeated grouped holdouts; they are not confidence intervals or independent experiment replications.

@@ -1,0 +1,19 @@
+MEASURED SCENARIOS
+
+The scenario summary contains 32 configuration groups across resource fractions 0.5, 1; 0 groups are represented at more than one fraction.
+
+At fraction 0.5: 69 observations; weighted mean throughput 50.88, jitter 0.3 ms, and packet loss 0.3094 source units.
+
+At fraction 1: 73 observations; weighted mean throughput 103.7, jitter 0.1892 ms, and packet loss 0.2923 source units.
+
+No configuration is observed at both resource fractions. These measured averages are confounded comparisons, not allocation effects.
+
+SIMULINK PROXIES
+
+From resource fraction 0.5 to 1, the latency proxy ms decreased by 44.72% (142.1 to 78.56; 142 matched samples).
+
+From resource fraction 0.5 to 1, the throughput proxy normalised increased by 100.00% (0.3785 to 0.757; 142 matched samples).
+
+From resource fraction 0.5 to 1, the packet loss proxy pct did not change by 0.00% (0.8197 to 0.8197; 142 matched samples).
+
+These are Simulink proxy outputs. The model's equations directly make throughput increase with resource fraction and latency decrease with it; packet loss depends on traffic load, not the resource fraction. This comparison does not establish real network gains.

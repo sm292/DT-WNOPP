@@ -1,0 +1,25 @@
+{
+  "matlab_executable": "C:\\Program Files\\MATLAB\\R2025b\\bin\\matlab.exe",
+  "input": "C:\\Users\\HP\\Documents\\DT-WNOPP\\03_DATA\\processed_measurements.csv",
+  "input_rows": 142,
+  "allocation_fractions": [
+    0.5,
+    1.0
+  ],
+  "runs": [
+    {
+      "resource_fraction": 0.5,
+      "returncode": 0,
+      "stdout": "Simulink run completed: 142 output samples\nSaved twin outputs: C:\\Users\\HP\\Documents\\DT-WNOPP\\04_RESULTS\\candidate_simulations\\proxy_resource_0p5.csv\n[\bWarning: Unable to close the model 'DT_WNOPP_Twin' because it has been changed. To save changes, use close_system('DT_WNOPP_Twin',1). To discard changes, use\nclose_system('DT_WNOPP_Twin',0).]\b \n",
+      "stderr": ""
+    },
+    {
+      "resource_fraction": 1.0,
+      "returncode": 0,
+      "stdout": "Simulink run completed: 142 output samples\nSaved twin outputs: C:\\Users\\HP\\Documents\\DT-WNOPP\\04_RESULTS\\candidate_simulations\\proxy_resource_1.csv\n[\bWarning: Unable to close the model 'DT_WNOPP_Twin' because it has been changed. To save changes, use close_system('DT_WNOPP_Twin',1). To discard changes, use\nclose_system('DT_WNOPP_Twin',0).]\b \n",
+      "stderr": ""
+    }
+  ],
+  "interpretation": "Simulink proxy outputs under shared traffic input; not independently measured network outcomes and not proof of a real-world optimum.",
+  "matlab_release_folder": "R2025b"
+}

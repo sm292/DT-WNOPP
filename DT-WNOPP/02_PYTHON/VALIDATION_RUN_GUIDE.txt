@@ -1,0 +1,49 @@
+DT-WNOPP validation and resource-screening update
+==================================================
+
+Repeated validation (uses the project environment with pandas/scikit-learn):
+  & 'C:\Users\HP\Documents\DT-WNOPP\.venv\Scripts\python.exe' 'C:\Users\HP\Documents\DT-WNOPP\02_PYTHON\validate_and_screen.py' --repeats 20 --seed 42
+
+When validated operational thresholds are available, pass them explicitly with
+--max-jitter-ms and --max-packet-loss. Packet loss retains the source dataset's
+units; confirm those units before setting a limit.
+
+The standard run_project_pipeline.py now includes this evaluator after the
+existing comparative stages. It does not automatically run candidate scenarios.
+
+Optional matched Simulink proxy runs for explicitly selected allocations:
+  ...\python.exe ...\simulate_candidates.py --allocations 0.5 1.0
+  ...\python.exe ...\simulate_candidates.py --matlab-exe 'C:\Program Files\MATLAB\R2025b\bin\matlab.exe' --allocations 0.5 0.75 1.0
+
+The validator reads processed observations and writes new outputs under
+04_RESULTS: repeated grouped holdout per-target metrics, predictions, split
+membership counts, run manifest with source hash/config/versions, a configured
+QoS eligibility/Pareto screen, and per-configuration/resource summaries.
+Estimators are fitted inside each training split. Repetitions of a scenario
+stay in one group. Source CSVs are not modified. If QoS limits are omitted,
+the output labels its rows as unconstrained observed Pareto candidates; it does
+not silently invent thresholds.
+
+The candidate adapter sends identical traffic/scenario rows to the current
+Simulink model while changing only resource_fraction. It saves generated
+inputs, proxy outputs, paired deltas and MATLAB invocation logs under
+04_RESULTS/candidate_simulations. The adapter was run at 0.5 and 1.0; each
+produced 142 matched proxy samples. Outputs are model proxies, not measured
+network outcomes. The current MATLAB installation folder is R2025b. Review
+model units and semantics before interpreting proxy changes.
+
+The 0.5-to-1.0 proxy comparison showed mean latency proxy 142.11 to 78.56
+(-44.72%), normalised throughput proxy 0.3785 to 0.7570 (+100%), and packet-loss
+proxy unchanged at 0.8197. These are results of the Simulink proxy model, not
+independent network measurements or evidence of a real-world improvement.
+
+The public dataset contains only resource fractions 0.5 and 1.0 with
+confounded traffic/bandwidth conditions. The screen/summary therefore do not
+establish causal allocation effects or a global optimum. A real
+baseline-versus-optimised claim requires measured outcomes under identical
+scenario, offered traffic, bandwidth, seed, and duration, with explicit QoS
+limits and independent replications.
+
+Anomaly review: throughput near 14.85 (source row 106) and jitter near 3.58 ms
+(source row 39) remain in the data pending verification against source records.
+

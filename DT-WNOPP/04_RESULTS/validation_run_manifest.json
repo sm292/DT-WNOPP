@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-10-13T06:51:57.737588+00:00",
+  "seed": 42,
+  "repeats": 20,
+  "features": [
+    "resource_fraction",
+    "offered_downlink_source_units"
+  ],
+  "targets": {
+    "throughput_observed_source_units": "max",
+    "jitter_observed_ms": "min",
+    "packet_loss_observed_source_units": "min"
+  },
+  "qos_limits": {
+    "jitter_ms": null,
+    "packet_loss_source_units": null
+  },
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "pandas": "3.0.6",
+  "numpy": "2.5.3",
+  "source_csv": "C:\\Users\\HP\\Documents\\DT-WNOPP\\03_DATA\\processed_measurements.csv",
+  "source_sha256": "f3b259cd85643ba972c6ca67948074e32787c93301ce132818798b8b1471fbf1",
+  "allocation_values": [
+    0.5,
+    1.0
+  ],
+  "claim_limit": "Grouped holdout predictive comparison; observed resource screen only. No causal effect or global optimum established."
+}
